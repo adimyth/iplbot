@@ -4,3 +4,4 @@ wikipedia
 scikit-learn
 pandas
 nltk
+gunicorn
