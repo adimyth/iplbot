@@ -2,6 +2,7 @@ import nltk
 import string
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+nltk.data.path.append("./nltk_data/")
 
 with open('ipl.txt', 'r') as file:
     raw_data = file.read()
