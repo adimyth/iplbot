@@ -35,19 +35,19 @@ h3 {
 	width: 87%;
 	border: none;
 	border-bottom: 3px solid #009688;
-	font-family: monospace;
+	font-family: roboto;
 	font-size: 17px;
 }
 
 #buttonInput {
 	padding: 3px;
-	font-family: monospace;
+	font-family: roboto;
 	font-size: 17px;
 }
 
 .userText {
 	color: white;
-	font-family: monospace;
+	font-family: roboto;
 	font-size: 17px;
 	text-align: right;
 	line-height: 30px;
@@ -62,7 +62,7 @@ h3 {
 
 .botText {
 	color: white;
-	font-family: monospace;
+	font-family: roboto;
 	font-size: 17px;
 	text-align: left;
 	line-height: 30px;

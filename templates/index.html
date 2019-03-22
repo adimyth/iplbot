@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/static/style.css" />
 	</head>
 
-	<body>
+	<body style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);">
 		<div class="row">
 			<div class="col s3"></div>
 			<div class="col s12 m6">
@@ -19,10 +19,24 @@
 						IPL BOT
 					</h1>
 						<div id="chatbox">
-						<img src="https://i.ibb.co/fYP4ndG/waving-hand-sign-1f44b-1.png">
-						<p>
-								<span>Hi there! I'm IPL Bot</span>
-							</p>
+						<div class="row">
+							<div class='col s1'>
+								<img src='/static/img/chatbot.png'> 
+							</div> 
+							<div class='col s1'></div> 
+							<div class="col s9">
+									<div class="speech-bubble-ds-left">
+											<p>
+													<span>Hey there, enthusiast!
+														<img src="/static/img/wavehand.png"> 
+														I'm Jarvis the IPL Chatbot. 
+														I can help you answer some interesting questions and facts about IPL.
+														To get started, you can ask me about the current IPL champion. 
+													</span>
+												</p>		
+									</div>			
+							</div>
+						</div>
 					</div>
 					<div id="userInput" class="card-action">
 						<input id="textInput" type="text" name="msg" placeholder="Message">
@@ -31,7 +45,22 @@
 							<script>
 								function getBotResponse() {
 									var rawText = $("#textInput").val();
-									var userHtml = '<div class="speech-bubble-ds-right"> <p><span>' + rawText + '</span></p><div class="speech-bubble-ds-arrow-right"></div></div>';
+									console.log(rawText);
+									// var userHtml = '<div class="speech-bubble-ds-right"> <p><span>' + rawText + '</span></p><div class="speech-bubble-ds-arrow-right"></div></div>';
+									var userHtml = "<div class='row'> \
+												<div class='col s2'></div> \
+												<div class='col s6'> \
+													<div class='speech-bubble-ds-right'> \
+														<p><span>" + rawText + "</span></p> \
+													<div class='speech-bubble-ds-arrow-right'></div> \
+													</div> \
+												</div> \
+												<div class='col s1'></div> \
+												<div class='col s2'> \
+													<img src='/static/img/profile.png'> \
+												</div> \
+											</div>"
+
 									$("#textInput").val("");
 									$("#chatbox").append(userHtml);
 									document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -39,13 +68,15 @@
 
 										var botHtml = "<div class='row'> \
 												<div class='col s1'></div> \
-												<div class='col s1'> \
-													<img src='https://i.ibb.co/fYP4ndG/waving-hand-sign-1f44b-1.png'> \
+												<div class='col s2'> \
+													<img src='/static/img/chatbot.png'> \
 												</div> \
-												<div class='col s9'> \
+												<div class='col s1'></div> \
+												<div class='col s6'> \
 													<div class='speech-bubble-ds-left'> \
 														<p><span>" + data + "</span></p> \
-													<div class='speech-bubble-ds-arrow-left'></div> \
+														<div class='speech-bubble-ds-arrow-left'></div> \
+													</div> \
 												</div> \
 											</div>"
 										$("#chatbox").append(botHtml);
