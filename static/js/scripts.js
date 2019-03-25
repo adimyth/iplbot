@@ -22,7 +22,6 @@ function getIPLTeams(needle) {
 					break;
 				}
 			}
-
 			return index;
 		};
 	}
@@ -938,7 +937,9 @@ function getTodaySchedule(ipl_matches) {
 			(document.getElementById("match_2_team_1_img").src =
 				"/static/img/" + getImageFileName(today_matches[1]["team-1"])),
 			(document.getElementById("match_2_team_2_img").src =
-				"/static/img/" + getImageFileName(today_matches[1]["team-2"]));
+				"/static/img/" + getImageFileName(today_matches[1]["team-2"])),
+			(document.getElementById("match_1").innerHTML = "vs"),
+			(document.getElementById("match_2").innerHTML = "vs");
 	} else if (today_matches.length == 1) {
 		(document.getElementById("match_1_team_1_img").src =
 			"/static/img/" + getImageFileName(today_matches[0]["team-1"])),

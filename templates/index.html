@@ -18,9 +18,9 @@
 					<!-- LOGO div -->
 					<div>
 							<img src="/static/img/logo.svg">
-							<h1 style="display: inline; font-family: UberMoveBold; color: white">
+							<h3 style="display: inline; font-family: UberMoveBold; color: white">
 								BotVic
-							</h1>
+							</h3>
 					</div>
 					<!-- Today's div -->
 					<div style="margin-top: 20px"></div>
@@ -29,22 +29,22 @@
 							Today
 						</h3>
 						<h5 id="date" style="font-family: UberMoveBold; color: white;"></h5>
-						<table style="color: white; font-family: UberMoveBold" class="responsive-table">		
+						<table style="color: white; font-family: UberMoveBold;">		
 								<tbody>
 									<tr>
-										<td class="center"><img id="match_1_team_1_img"/></td>
-										<td class="center">vs</td>
-										<td class="center"><img id="match_1_team_2_img"/></td>
+										<td class="center"><img class="responsive-img" id="match_1_team_1_img"/></td>
+										<td class="center" id="match_1">vs</td>
+										<td class="center"><img class="responsive-img" id="match_1_team_2_img"/></td>
 									</tr>
 									<tr>
-										<td class="center"><img id="match_2_team_1_img"/></td>
-										<td class="center">vs</td>
-										<td class="center"><img id="match_2_team_2_img"/></td>
+										<td class="center"><img class="responsive-img" id="match_2_team_1_img"/></td>
+										<td class="center" id="match_2"></td>
+										<td class="center"><img class="responsive-img" id="match_2_team_2_img"/></td>
 									</tr>
 								</tbody>
 							</table>
 							<h5 style="font-family: UberMoveBold; color: white;">Upcoming Matches</h5>
-							<table style="color: white; font-family: UberMoveBold" class="responsive-table">		
+							<table style="color: white; font-family: UberMoveBold">		
 									<tbody>
 										<tr>
 											<td class="center"><img id="upcoming_match_1_team_1_img"/></td>
@@ -61,53 +61,54 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s4 m4">
-					<div id="chatbox" class="row">
-						<div class='col s2'>
+
+			<div class="col s8">
+					<div id="chatbox" class="row scrollable">
+						<div class='col s1'>
 							<img src='/static/img/mod_logo.png' style="	width: 60px; margin-left: 20px;"> 
-						</div> 
-						<div class='col s1'></div> 
-						<div class="col s8">
-								<div class="speech-bubble">
-										<p>
-												<span>Hey there!
-													I'm BotVic. 
-													I can help you answer some interesting questions and facts about IPL.
-													To get started, you can ask me about the current IPL champion. 
-												</span>
-											</p>		
-								</div>
-					</div>
+						</div>
+						<div class="row">
+							<div class='col s1'></div> 
+							<div class="col s8">
+									<div class="speech-bubble">
+											<span>Hey there!
+												I'm BotVic. 
+												I can help you answer some interesting questions and facts about IPL.
+												To get started, you can ask me about the current IPL champion. 
+											</span>
+									</div>
+						</div>
 					</div>
 					<div class="row">
-							<div id="userInput" class="card" style="border-radius: 20px;">
-									<input type="image" style="float: right" name="action" src="/static/img/send@2x.png" alt="Send"/>	
-									<div style="overflow: hidden; padding-right: .5em;">
-										<input id="textInput" style="margin-left: 20px" type="text" name="msg" placeholder="Type your message here">
-									</div>
-								</div>
-
+						<div class="col s7" style="position: absolute; bottom: 0px;">
+								<div id="userInput" class="card" style="border-radius: 50px; z-index: 100;">
+										<input id="buttonInput" type="image" style="float: right" name="action" src="/static/img/send@2x.png" alt="Send"/>	
+										<div style="overflow: hidden; padding-right: .5em;">
+											<input id="textInput" style="margin-left: 20px; border-bottom: #ffffff " type="text" name="msg" placeholder="Type your message here">
+										</div>
+									</div>	
+						</div>
 					</div>
 					<script>
 							function getBotResponse() {
 								var rawText = $("#textInput").val();
-								console.log(rawText);
 								var userHtml =
-									"<div class='row'> \
-															<div class='col s1'></div> \
-															<div class='col s8'> \
-																	<div class='speech-bubble'> \
-																			<p><span>" +
-									rawText +
-									"</span></p> \
-																	</div> \
-															</div> \
-															<div class='col s2'> \
-																	<img src='/static/img/profile.png' style='width: 60px; height:60px'> \
-															</div> \
-													</div>";
+								"<div class='row'> \
+										<div class='col s1'></div> \
+										<div class='col s8'> \
+												<div class='speech-bubble' style='float:right'> \
+													<span>" +
+														rawText +
+													"</span> \
+												</div> \
+										</div> \
+										<div class='col s2'> \
+											<img src='/static/img/profile.png' style='width: 60px; height:60px'> \
+										</div> \
+									</div>";
 
 								$("#textInput").val("");
+								console.log(userHtml);
 								$("#chatbox").append(userHtml);
 								document
 									.getElementById("userInput")
@@ -115,18 +116,17 @@
 								$.get("/get", { msg: rawText }).done(function(data) {
 									var botHtml =
 										"<div class='row'> \
-															<div class='col s2'> \
-																	<img src='/static/img/mod_logo.png' style='width: 60px; margin-left: 20px;'> \
-															</div> \
-															<div class='col s1'></div> \
-															<div class='col s8'> \
-																	<div class='speech-bubble'> \
-																			<p><span>" +
-										data +
-										"</span></p> \
-																	</div> \
-															</div> \
-													</div>";
+												<div class='col s2'> \
+													<img src='/static/img/mod_logo.png' style='width: 60px; margin-left: 20px;'> \
+												</div> \
+												<div class='col s8'> \
+													<div class='speech-bubble' style='float:left'> \
+														<span>" +
+																data +
+														"</span> \
+													</div> \
+												</div> \
+											</div>";
 									$("#chatbox").append(botHtml);
 									document
 										.getElementById("userInput")
@@ -143,111 +143,6 @@
 							});
 					</script>
 					</div>
-					
-					<div class="col s4 m4">
-						<div class="row center" style="background-color: rgba(92, 118, 255, 0.9);">
-								<div>
-										<img src="/static/img/ipl.png" style="border-radius: 0px; float: left;"/>
-										<h2 style="display: inline; font-family: UberMoveBold; color: white;">
-											IPL Table
-										</h2>
-								</div>
-								<table style="margin-top:40px; font-family: UberMoveRegular; text-align: center; color: white">
-										<thead>
-											<tr>
-													<th>Teams</th>
-													<th>Matches</th>
-													<th>Won</th>
-													<th>Lost</th>
-													<th>NR</th>
-													<th>Points</th>
-													<th>NRR</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Chennai Super Kings</td>
-												<td>1</td>
-												<td>1</td>
-												<td>0</td>
-												<td>0</td>
-												<td>0</td>
-												<td>2</td>
-												<td>+0.519</td>
-											</tr>
-											<tr>
-													<td>Kolkata Knight Riders</td>
-													<td>1</td>
-													<td>1</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>2</td>
-													<td>+0.255</td>
-											</tr>
-											<tr>
-													<td>Delhi Capitals</td>
-													<td>1</td>
-													<td>1</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>2</td>
-													<td>+0.519</td>	
-											</tr>
-											<tr>
-													<td>Mumbai Indians</td>
-													<td>1</td>
-													<td>0</td>
-													<td>1</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>+0.519</td>	
-											</tr>
-											<tr>
-													<td>Rajasthan Royals</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>	
-											</tr>
-											<tr>
-													<td>Kings XI Punjab</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>
-													<td>0</td>	
-											</tr>
-											<tr>
-													<td>Sunrisers Hyderabad </td>
-													<td>1</td>
-													<td>0</td>
-													<td>1</td>
-													<td>0</td>
-													<td>0</td>
-													<td>2</td>
-													<td>-0.255</td>	
-											</tr>
-											<tr>
-													<td>Royal Challengers Banglore</td>
-													<td>1</td>
-													<td>0</td>
-													<td>1</td>
-													<td>0</td>
-													<td>0</td>
-													<td>2</td>
-													<td>-0.519</td>	
-											</tr>
-										</tbody>
-									</table>
-						</div>
 					</div>
 				</div>
 			</div>
