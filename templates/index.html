@@ -1,151 +1,185 @@
 <html>
-	<head>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-		/>
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="/static/js/scripts.js"></script>
-		<link rel="stylesheet" type="text/css" href="/static/style.css" />
-	</head>
 
-	<body onload="getDate(); getAllSchedule()">
-		<div class="row">
-			<div class="col s4">
-				<div class="row center" style="background-color: rgba(92, 118, 255, 0.9)">
-					<!-- LOGO div -->
-					<div>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/static/js/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/style.css" />
+</head>
+
+<body onload="getDate(); getAllSchedule()">
+	<div class="row">
+		<div class="col s4">
+			<div class="row center" style="height: 100vh; background-color: rgba(92, 118, 255, 0.9)">
+				<!-- LOGO div -->
+				<div class="row center">
+					<div class="col l8 offset-l2 mt-0">
+						<div class="valign-wrapper mt-0">
 							<img src="/static/img/logo.svg">
-							<h3 style="display: inline; font-family: UberMoveBold; color: white">
+							<h3 class="app-name">
 								BotVic
 							</h3>
-					</div>
-					<!-- Today's div -->
-					<div style="margin-top: 20px"></div>
-					<div>
-						<h3 style="font-family: UberMoveRegular; color: white; ">
-							Today
-						</h3>
-						<h5 id="date" style="font-family: UberMoveBold; color: white;"></h5>
-						<table style="color: white; font-family: UberMoveBold;">		
-								<tbody>
-									<tr>
-										<td class="center"><img class="responsive-img" id="match_1_team_1_img"/></td>
-										<td class="center" id="match_1">vs</td>
-										<td class="center"><img class="responsive-img" id="match_1_team_2_img"/></td>
-									</tr>
-									<tr>
-										<td class="center"><img class="responsive-img" id="match_2_team_1_img"/></td>
-										<td class="center" id="match_2"></td>
-										<td class="center"><img class="responsive-img" id="match_2_team_2_img"/></td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 style="font-family: UberMoveBold; color: white;">Upcoming Matches</h5>
-							<table style="color: white; font-family: UberMoveBold">		
-									<tbody>
-										<tr>
-											<td class="center"><img id="upcoming_match_1_team_1_img"/></td>
-											<td class="center" id="upcoming_match_1_timing"></td>
-											<td class="center"><img id="upcoming_match_1_team_2_img"/></td>
-										</tr>
-										<tr>
-											<td class="center"><img id="upcoming_match_2_team_1_img"/></td>
-											<td class="center" id="upcoming_match_2_timing"></td>
-											<td class="center"><img id="upcoming_match_2_team_2_img"/></td>
-										</tr>
-									</tbody>
-								</table>	
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col s8">
-					<div id="chatbox" class="row scrollable">
-						<div class='col s1'>
-							<img src='/static/img/mod_logo.png' style="	width: 60px; margin-left: 20px;"> 
+				<!-- Today's div -->
+				<div class="row">
+					<h4 class="mt-0 white-text bold">
+						Today
+					</h4>
+					<h5 id="date" class="app-name"></h5>
+					<div class="row valign-wrapper">
+						<div class="col s3 offset-s1">
+							<div class="team_logo">
+								<img class="match_team responsive-img" id="match_1_team_1_img" />
+							</div>
 						</div>
-						<div class="row">
-							<div class='col s1'></div> 
-							<div class="col s8">
-									<div class="speech-bubble">
-											<span>Hey there!
-												I'm BotVic. 
-												I can help you answer some interesting questions and facts about IPL.
-												To get started, you can ask me about the current IPL champion. 
-											</span>
-									</div>
+						<div id="match_1" class="col s2 offset-s1 white-text"></div>
+						<div class="col s3 offset-s1">
+							<img class="match_team team_logo responsive-img" id="match_1_team_2_img" />
+						</div>
+					</div>
+					<div class="row valign-wrapper">
+						<div class="col s3 offset-s1">
+							<img class="match_team team_logo responsive-img" id="match_2_team_1_img" />
+						</div>
+						<div id="match_2" class="col s2 offset-s1 white-text"></div>
+						<div class="col s3 offset-s1">
+							<img class="match_team team_logo responsive-img" id="match_2_team_2_img" />
+						</div>
+					</div>
+					<h5 class="app-name">Upcoming Matches</h5>
+					<div class="row valign-wrapper">
+						<div class="col s3 offset-s1">
+							<div class="team_logo_small">
+								<img class="match_team responsive-img" id="upcoming_match_1_team_1_img" />
+							</div>
+						</div>
+						<div id="upcoming_match_1_timing" class="col s2 offset-s1 white-text"></div>
+						<div class="col s3 offset-s1">
+							<div class="team_logo_small">
+								<img class="match_team responsive-img" id="upcoming_match_1_team_2_img" />
+							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s7" style="position: absolute; bottom: 0px;">
-								<div id="userInput" class="card" style="border-radius: 50px; z-index: 100;">
-										<input id="buttonInput" type="image" style="float: right" name="action" src="/static/img/send@2x.png" alt="Send"/>	
-										<div style="overflow: hidden; padding-right: .5em;">
-											<input id="textInput" style="margin-left: 20px; border-bottom: #ffffff " type="text" name="msg" placeholder="Type your message here">
-										</div>
-									</div>	
+						<div class="col s12">
+							<div class="col s1"></div>
+							<div class="col s3">
+								<div class="team_logo_small">
+									<img class="match_team responsive-img" id="upcoming_match_2_team_1_img" />
+								</div>
+							</div>
+							<div class="col s1"></div>
+							<div id="upcoming_match_2_timing" class="col s2 white-text bold"></div>
+							<div class="col s1"></div>
+							<div class="col s3">
+								<div class="team_logo_small">
+									<img class="match_team responsive-img" id="upcoming_match_2_team_2_img" />
+								</div>
+							</div>
+							<div class="col s1"></div>
 						</div>
-					</div>
-					<script>
-							function getBotResponse() {
-								var rawText = $("#textInput").val();
-								var userHtml =
-								"<div class='row'> \
-										<div class='col s1'></div> \
-										<div class='col s8'> \
-												<div class='speech-bubble' style='float:right'> \
-													<span>" +
-														rawText +
-													"</span> \
-												</div> \
-										</div> \
-										<div class='col s2'> \
-											<img src='/static/img/profile.png' style='width: 60px; height:60px'> \
-										</div> \
-									</div>";
-
-								$("#textInput").val("");
-								console.log(userHtml);
-								$("#chatbox").append(userHtml);
-								document
-									.getElementById("userInput")
-									.scrollIntoView({ block: "start", behavior: "smooth" });
-								$.get("/get", { msg: rawText }).done(function(data) {
-									var botHtml =
-										"<div class='row'> \
-												<div class='col s2'> \
-													<img src='/static/img/mod_logo.png' style='width: 60px; margin-left: 20px;'> \
-												</div> \
-												<div class='col s8'> \
-													<div class='speech-bubble' style='float:left'> \
-														<span>" +
-																data +
-														"</span> \
-													</div> \
-												</div> \
-											</div>";
-									$("#chatbox").append(botHtml);
-									document
-										.getElementById("userInput")
-										.scrollIntoView({ block: "start", behavior: "smooth" });
-								});
-							}
-							$("#textInput").keypress(function(e) {
-								if (e.which == 13) {
-									getBotResponse();
-								}
-							});
-							$("#buttonInput").click(function() {
-								getBotResponse();
-							});
-					</script>
-					</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</body>
+		<div class="col s8">
+			<div id="chatbox" class="scrollable">
+				<div class='col s1'>
+					<img class="chat_icon" src='/static/img/mod_logo.png' />
+				</div>
+				<div class="row">
+					<div class="col s8 offset-s1">
+						<div class="speech-bubble">
+							<span>Hey there! I'm BotVic. I can help you answer some interesting questions and facts about IPL. To get started, you can
+								ask me about the current IPL champion.
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s7" style="position: absolute; bottom: 0px;">
+						<div id="userInput" class="card valign-wrapper row" style="border-radius: 50px; z-index: 100;">
+							<div class="col l11" style="overflow: hidden; padding-right: .5em;">
+								<input id="textInput" style="margin-left: 20px; border-bottom: #ffffff " type="text" name="msg" placeholder="Type your message here">
+							</div>
+							<div class="col l1">
+								<input class="" id="buttonInput" type="image" name="action" src="/static/img/send.svg" alt="Send" />
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<script>
+					function getBotResponse() {
+						var botTyping =
+							"<div class='row'> \
+												<div class='col s1'> \
+													<img src='/static/img/mod_logo.png' class='chat_icon'> \
+												</div> \
+												<div class='col s8 offset-s1'> \
+													<img src='/static/img/typing.svg' /> \
+												</div> \
+											</div>";
+
+						var rawText = $("#textInput").val();
+						let userHtml = "<div class='row'> \
+										<div class='col s8 offset-s1'> \
+												<div class='speech-bubble' style='float:right'> \
+													<span>" +
+							rawText +
+							"</span> \
+												</div> \
+										</div> \
+										<div class='col s2'> \
+											<img class='chat_icon' src='/static/img/profile.png'> \
+										</div> \
+									</div>";
+
+						$("#textInput").val("");
+
+						$("#chatbox").append(userHtml);
+						$("#chatbox").append(botTyping);
+						document
+							.getElementById("userInput")
+							.scrollIntoView({ block: "start", behavior: "smooth" });
+						$.get("/get", { msg: rawText }).done(function (data) {
+							var botHtml =
+								"<div class='row'> \
+												<div class='col s2'> \
+													<img src='/static/img/mod_logo.png' class='chat_icon'> \
+												</div> \
+												<div class='col s8 offset-s1'> \
+													<div class='speech-bubble' style='float:left'> \
+														<span>" + data + "</span> \
+													</div> \
+												</div> \
+											</div>";
+							let lastItem = document.getElementById('chatbox');
+							console.log(typeof (chatElement));
+							lastItem.replaceChild(document.createRange().createContextualFragment(botHtml), lastItem.lastChild)
+							document
+								.getElementById("userInput")
+								.scrollIntoView({ block: "start", behavior: "smooth" });
+						});
+					}
+					$("#textInput").keypress(function (e) {
+						if (e.which == 13) {
+							getBotResponse();
+						}
+					});
+					$("#buttonInput").click(function () {
+						getBotResponse();
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</body>
+
 </html>

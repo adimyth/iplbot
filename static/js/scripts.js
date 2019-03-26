@@ -42,7 +42,6 @@ function getAllSchedule() {
 		"Kings XI Punjab"
 	];
 
-	console.log("Hello, I'm here!!");
 	response = {
 		matches: [
 			{
@@ -930,21 +929,31 @@ function getTodaySchedule(ipl_matches) {
 	});
 	console.log("Todays Matches", today_matches);
 	if (today_matches.length == 2) {
-		(document.getElementById("match_1_team_1_img").src =
-			"/static/img/" + getImageFileName(today_matches[0]["team-1"])),
-			(document.getElementById("match_1_team_2_img").src =
-				"/static/img/" + getImageFileName(today_matches[0]["team-2"])),
-			(document.getElementById("match_2_team_1_img").src =
-				"/static/img/" + getImageFileName(today_matches[1]["team-1"])),
-			(document.getElementById("match_2_team_2_img").src =
-				"/static/img/" + getImageFileName(today_matches[1]["team-2"])),
-			(document.getElementById("match_1").innerHTML = "vs"),
-			(document.getElementById("match_2").innerHTML = "vs");
+		document.getElementById("match_1_team_1_img").src =
+			"/static/img/" + getImageFileName(today_matches[0]["team-1"]);
+		document.getElementById("match_1_team_2_img").src =
+			"/static/img/" + getImageFileName(today_matches[0]["team-2"]);
+		document.getElementById("match_2_team_1_img").src =
+			"/static/img/" + getImageFileName(today_matches[1]["team-1"]);
+		document.getElementById("match_2_team_2_img").src =
+			"/static/img/" + getImageFileName(today_matches[1]["team-2"]);
+		document.getElementById("match_1").innerHTML = "vs";
+		document.getElementById("match_2").innerHTML = "vs";
+		document.getElementById("match_1_team_1_img").style.display = "block";
+		document.getElementById("match_1_team_2_img").style.display = "block";
+		document.getElementById("match_2_team_1_img").style.display = "block";
+		document.getElementById("match_2_team_2_img").style.display = "block";
+		document.getElementById("match_1").style.display = "block";
+		document.getElementById("match_2").style.display = "block";
 	} else if (today_matches.length == 1) {
-		(document.getElementById("match_1_team_1_img").src =
-			"/static/img/" + getImageFileName(today_matches[0]["team-1"])),
-			(document.getElementById("match_1_team_2_img").src =
-				"/static/img/" + getImageFileName(today_matches[0]["team-2"]));
+		document.getElementById("match_1_team_1_img").src =
+			"/static/img/" + getImageFileName(today_matches[0]["team-1"]);
+		document.getElementById("match_1_team_2_img").src =
+			"/static/img/" + getImageFileName(today_matches[0]["team-2"]);
+		document.getElementById("match_1_team_1_img").style.display = "block";
+		document.getElementById("match_1_team_2_img").style.display = "block";
+		document.getElementById("match_1").innerHTML = "vs";
+		document.getElementById("match_1").style.display = "block";
 	}
 }
 
@@ -958,31 +967,45 @@ function getUpcomingSchedule(ipl_matches) {
 		);
 	});
 	if (upcoming_matches.length == 2) {
-		(document.getElementById("upcoming_match_1_team_1_img").src =
-			"/static/img/" + getImageFileName(upcoming_matches[0]["team-1"])),
-			(document.getElementById("upcoming_match_1_team_2_img").src =
-				"/static/img/" +
-				getImageFileName(upcoming_matches[0]["team-2"])),
-			(document.getElementById(
-				"upcoming_match_1_timing"
-			).innerHTML = getISTTime(upcoming_matches[0].dateTimeGMT)),
-			(document.getElementById("upcoming_match_2_team_1_img").src =
-				"/static/img/" +
-				getImageFileName(upcoming_matches[1]["team-1"])),
-			(document.getElementById("upcoming_match_2_team_2_img").src =
-				"/static/img/" +
-				getImageFileName(upcoming_matches[1]["team-2"]));
+		document.getElementById("upcoming_match_1_team_1_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[0]["team-1"]);
+		document.getElementById("upcoming_match_1_team_2_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[0]["team-2"]);
+		document.getElementById("upcoming_match_2_team_1_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[1]["team-1"]);
+		document.getElementById("upcoming_match_2_team_2_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[1]["team-2"]);
+		document.getElementById(
+			"upcoming_match_1_timing"
+		).innerHTML = getISTTime(upcoming_matches[0].dateTimeGMT);
 		document.getElementById(
 			"upcoming_match_2_timing"
 		).innerHTML = getISTTime(upcoming_matches[1].dateTimeGMT);
+		document.getElementById("upcoming_match_1_team_1_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_1_team_2_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_2_team_1_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_2_team_2_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_1_timing").style.display =
+			"block";
+		document.getElementById("upcoming_match_2_timing").style.display =
+			"block";
 	} else if (upcoming_matches.length == 1) {
-		(document.getElementById("upcoming_match_1_team_1_img").src =
-			"/static/img/" + getImageFileName(upcoming_matches[0]["team-1"])),
-			(document.getElementById("upcoming_match_1_team_2_img").src =
-				"/static/img/" +
-				getImageFileName(upcoming_matches[0]["team-2"])),
-			(document.getElementById(
-				"upcoming_match_1_timing"
-			).innerHTML = getISTTime(upcoming_matches[0].dateTimeGMT));
+		document.getElementById("upcoming_match_1_team_1_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[0]["team-1"]);
+		document.getElementById("upcoming_match_1_team_2_img").src =
+			"/static/img/" + getImageFileName(upcoming_matches[0]["team-2"]);
+		document.getElementById(
+			"upcoming_match_1_timing"
+		).innerHTML = getISTTime(upcoming_matches[0].dateTimeGMT);
+		document.getElementById("upcoming_match_1_team_1_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_1_team_2_img").style.display =
+			"block";
+		document.getElementById("upcoming_match_1_timing").style.display =
+			"block";
 	}
 }
