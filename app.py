@@ -12,10 +12,7 @@ def home():
 
 @app.route("/get", methods=['GET', 'POST'])
 def get_bot_response():
-    print(f"Request: {request}")
     user_input = request.args.get('msg')
-    print(
-        f'Message: {user_input}\nOutput: {str(generate_response(user_input))}')
     return str(generate_response(user_input))
 
 
