@@ -6,14 +6,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="/static/js/scripts.js"></script>
-	<link rel="stylesheet" type="text/css" href="/static/style.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
 </head>
 
 <body onload="getDate(); getAllSchedule()">
 	<div class="row">
 		<div class="col s4">
 			<div class="row center" style="height: 100vh; background-color: rgba(92, 118, 255, 0.9)">
-				<!-- LOGO div -->
 				<div class="row center">
 					<div class="col l8 offset-l2 mt-0">
 						<div class="valign-wrapper mt-0">
@@ -24,7 +24,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- Today's div -->
 				<div class="row">
 					<h4 class="mt-0 white-text bold">
 						Today
@@ -182,8 +181,150 @@
 				</script>
 			</div>
 		</div>
+
 	</div>
-	</div>
+
+
+	<!-- This is new -->
+	<div class="main row">
+		<div class="match-container col l4 s4 blue accent-2 white-text">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 offset-l3 valign-wrapper">
+						<img class="logo" src="/static/img/logo.svg">
+						<h2 class="bold white-text">BotVic</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col l12">
+						<h5 class="bold">Today</h5>
+						<div class="row valign-wrapper">
+							<div class="col l4 center">
+								<img class="team-logo" src="/static/img/KolkataKnightRiders.jpg" />
+							</div>
+							<div class="col l2 center">
+								<p class="bold">vs</p>
+							</div>
+							<div class="col l4 center">
+								<img class="team-logo" src="/static/img/MumbaiIndians.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="bold">Upcoming Matches</h5>
+					<div class="list-match-container">
+						<div class="item-match row valign-wrapper">
+							<div class="col l4 center">
+								<img class="team-logo-small" src="/static/img/KolkataKnightRiders.jpg" />
+							</div>
+							<div class="col l4 center">
+								<p class="m-0 bold">March 28</p>
+								<p class="m-0 bold">02:00 PM</p>
+							</div>
+							<div class="col l4 center">
+								<img class="team-logo-small" src="/static/img/MumbaiIndians.jpg" />
+							</div>
+						</div>
+						<div class="item-match row valign-wrapper">
+							<div class="col l4 center">
+								<img class="team-logo-small" src="/static/img/DelhiCapitals.jpg" />
+							</div>
+							<div class="col l4 center">
+								<p class="m-0 bold">March 29</p>
+								<p class="m-0 bold">07:00 PM</p>
+							</div>
+							<div class="col l4 center">
+								<img class="team-logo-small" src="/static/img/ChennaiSuperKings.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bot-container col l4 s12">
+			<div class="chat-container">
+				<div class="chat-element row valign-wrapper">
+					<div class="col l2">
+						<img class="botvic-chat-logo" src="/static/img/logo.svg" />
+					</div>
+					<div class="col l10">
+						<div class="chat-bubble">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laborum culpa rerum. Quos,
+							reiciendis fuga nihil
+							possimus ducimus alias animi numquam autem itaque illum modi repudiandae architecto
+							exercitationem? Perferendis,
+							consequatur.
+						</div>
+					</div>
+				</div>
+				<div class="chat-element row valign-wrapper">
+					<div class="col l10">
+						<div class="chat-bubble">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laborum culpa rerum. Quos,
+							reiciendis fuga nihil
+							possimus ducimus alias animi numquam autem itaque illum modi repudiandae architecto
+							exercitationem? Perferendis,
+							consequatur.
+						</div>
+					</div>
+					<div class="col l2">
+						<img class="botvic-chat-logo" src="/static/img/user.svg" />
+					</div>
+				</div>
+			</div>
+
+			<div class="suggestion-container">
+				<div class="suggestion-chip chip">IPL Stats</div>
+				<div class="suggestion-chip chip">IPL Stats</div>
+				<div class="suggestion-chip chip">IPL Stats</div>
+				<div class="suggestion-chip chip">IPL Stats</div>
+				<div class="suggestion-chip chip">IPL Stats</div>
+				<div class="suggestion-chip chip">IPL Stats</div>
+			</div>
+
+			<div class="chat-input row valign-wrapper">
+				<div class="col l11">
+					<input id="inputBox" type="text" placeholder="Type your message here" />
+				</div>
+				<div class="col 1">
+					<img src="/static/img/send.svg" />
+				</div>
+			</div>
+		</div>
+		<div class="stats-container col l4 s4 blue accent-2 white-text">
+			<div class="container">
+				<div class="row">
+					<h3 class="bold">Points Table</h3>
+				</div>
+				<div class="row">
+					<table class="white-text centered">
+						<thead>
+							<td>Team</td>
+							<td>Played</td>
+							<td>Win</td>
+							<td>Loose</td>
+							<td>Tied</td>
+							<td>NR</td>
+							<td>Points</td>
+							<td>NRR</td>
+						</thead>
+						<tbody>
+							<tr>
+								<td><img class="team-logo-more-small" src="/static/img/ChennaiSuperKings.jpg" /></td>
+								<td>2</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>4</td>
+								<td>+0.495</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 
