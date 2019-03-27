@@ -27,7 +27,7 @@ def get_points_table():
         if len(x) == 8:
             temp = dict()
             count = count+1
-            temp['team_name'] = x[0]
+            temp['team_name'] = ''.join(x[0].split())
             temp['mat'] = x[1]
             temp['won'] = x[2]
             temp['lost'] = x[3]
