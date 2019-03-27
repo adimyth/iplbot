@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+}
+
+.bot-container{
+    position: relative;
+    min-height: 100% !important;
+    background-color: #fafafa;
+    padding-top: 24px !important;
+    padding-bottom: 144px !important;
+}
+
+.match-container{
+    min-height: 100% !important;
+}
+
+.stats-container{
+    min-height: 100% !important;
+}
+
+.logo{
+    margin-right: 16px;
+}
+
+.team-logo{
+    width: 100px;
+    height: 100px;
+    padding: 16px;
+    background-color: white;
+    border: 4px solid #36E8AC;
+    border-radius: 50%;
+}
+
+.team-logo-small{
+    width: 75px;
+    height: 75px;
+    padding: 12px;
+    background-color: white;
+    border: 4px solid #36E8AC;
+    border-radius: 50%;
+}
+
+.team-logo-more-small{
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    background-color: white;
+    border: 4px solid #36E8AC;
+    border-radius: 50%;
+}
+
+.m-0{
+    margin: 0px !important;
+}
+
+.mb-2{
+    margin-bottom: 2rem !important;
+}
+
+.list-match-container{
+    padding-top: 16px;
+}
+
+.chat-container{
+    padding: 16px 16px;
+}
+
+#inputBox, input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea, #inputBox::placeholder, input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-family: "UberMove";
+}
+
+.botvic-chat-logo{
+    width: 75px;
+    height: 75px;
+    padding: 12px;
+    background-color: #448aff;
+    border: 4px solid #36E8AC;
+    border-radius: 50%;
+}
+
+.chat-bubble{
+    background: #4689fa21;
+    padding: 12px;
+    border-radius: 2px;
+}
+
+.chat-element{
+    margin-bottom: 2rem !important;
+}
+
+.chat-input{
+    position: absolute;
+    width: 90%;
+    bottom: 16px;
+    background-color: white;
+    margin: 0 24px !important;
+    height: 48px;
+    border-radius: 48px;
+    padding: 8px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
+}
+
+.suggestion-container{
+    position: absolute;
+    margin: 0 24px !important;
+    bottom: 72px;
+    padding: 8px;
+    height: 60px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.suggestion-container::-webkit-scrollbar, .suggestion-container::-webkit-scrollbar-track-piece, .suggestion-container::-webkit-scrollbar-thumb{
+    width: 0px;
+    height: 0px;
+}
+
+.suggestion-chip{
+    width: auto;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 48px;
+    background-color: #4689fa21;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #448aff;
+    padding: 8px 28px !important;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+}
