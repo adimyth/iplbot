@@ -1007,5 +1007,9 @@ function getUpcomingSchedule(ipl_matches) {
 			"block";
 		document.getElementById("upcoming_match_1_timing").style.display =
 			"block";
+		document.getElementById("upcoming_match_2_team_1").style.display =
+			"none";
+		document.getElementById("upcoming_match_2_team_2").style.display =
+			"none";
 	}
 }
