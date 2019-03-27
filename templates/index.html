@@ -103,10 +103,10 @@
 				<div class="row">
 					<div class="col s7" style="position: absolute; bottom: 0px;">
 						<div id="userInput" class="card valign-wrapper row" style="border-radius: 50px; z-index: 100;">
-							<div class="col l11" style="overflow: hidden; padding-right: .5em;">
+							<div class="col s11" style="overflow: hidden; padding-right: .5em;">
 								<input id="textInput" style="margin-left: 20px; border-bottom: #ffffff " type="text" name="msg" placeholder="Type your message here">
 							</div>
-							<div class="col l1">
+							<div class="col s1">
 								<input class="" id="buttonInput" type="image" name="action" src="/static/img/send.svg" alt="Send" />
 							</div>
 
@@ -117,13 +117,16 @@
 					function getBotResponse() {
 						var botTyping =
 							"<div class='row'> \
-												<div class='col s1'> \
-													<img src='/static/img/mod_logo.png' class='chat_icon'> \
-												</div> \
-												<div class='col s8 offset-s1'> \
-													<img src='/static/img/typing.svg' /> \
-												</div> \
-											</div>";
+								<div class='col s1'> \
+									<img src='/static/img/mod_logo.png' class='chat_icon'> \
+								</div> \
+								<div class='col s8 offset-s1'> \
+									<div class='typing-indicator'> \
+										<span></span> \
+										<span></span> \
+										<span></span> \
+								</div> \
+							</div>";
 
 						var rawText = $("#textInput").val();
 						let userHtml = "<div class='row'> \
