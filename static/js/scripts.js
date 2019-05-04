@@ -921,6 +921,7 @@ function getISTTime(time_string) {
 
 function getTodaySchedule(ipl_matches) {
 	let today_matches;
+	console.log("IPL MATCHES", ipl_matches);
 	today_matches = ipl_matches.filter(function(item) {
 		return (
 			item["dateTimeGMT"].slice(0, 10) ==
