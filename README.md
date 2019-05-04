@@ -73,3 +73,5 @@ python app.py
 
 **In case, a non-relevant question is sent in, the bot returns a sorry response**
 ![alt text](images/fig_6.png "Logo Title Text 1")
+
+Please **star** the repo and share it
