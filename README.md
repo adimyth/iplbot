@@ -1,7 +1,7 @@
 # IPL BOT
 
 A retreival based chat bot trained on IPL wikipedia pages. You can test out the app [here](http://134.209.148.44:5000/).
-Please, check the app on a desktop or view in desktop mode on mobile phones.
+Please, check the app on a desktop.
 
 
 ## Libraries Used
