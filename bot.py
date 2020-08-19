@@ -43,7 +43,3 @@ def generate_response(user_input):
     else:
         response = updated_sentence_tokens[max_sim_text_idx]
         return response.capitalize()
-
-
-if __name__ == '__main__':
-    print(generate_response("When is Indian Premier League contested?"))

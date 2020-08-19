@@ -2,10 +2,10 @@
 
 A retreival based chat bot trained on IPL wikipedia pages. You can test out the app [here](http://134.209.148.44:5000/).
 Please, check the app on a desktop.
-
+![Demo](out.gif)
 
 ## Libraries Used
-* Flask - For creating the web app
+* Streamlit - For creating the web app
 * Scikit Learn - For training a Tfidf vectorizer
 * BeautifulSoup, Request - For extracting and parsing data
 
@@ -21,10 +21,10 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
-Run the flask app
+Run the app
 ```bash
 cd iplbot
-python app.py
+streamlit run app.py
 ```
 
 ## How it works
@@ -50,29 +50,4 @@ python app.py
     * Sorts the vector similarity in decreasing order & chooses the first vector
     * Gets the corresponding sentence & capitalizes it
 
-## Results
-
-**Query**
-![alt text](images/fig_1.png "Logo Title Text 1")
-
-
-
-**Response**
-![alt text](images/fig_2.png "Logo Title Text 1")
-
-
-
-**Another example**
-![alt text](images/fig_3.png "Logo Title Text 1")
-
-
-
-**Sometimes the result might be different than expected. Better the quality of data fed in, more accurate the results would be**
-![alt text](images/fig_5.png "Logo Title Text 1")
-
-
-
-**In case, a non-relevant question is sent in, the bot returns a sorry response**
-![alt text](images/fig_6.png "Logo Title Text 1")
-
-Please **star** the repo and share it
+Please :star: the repo and share it

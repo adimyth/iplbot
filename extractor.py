@@ -34,10 +34,19 @@ def get_all_wiki_page_content(topics):
 
 
 if __name__ == '__main__':
-    topics = ['Indian Premier League', 'Category:Indian Premier League coaches',
-              'Mumbai Indians', 'Royal Challengers Bangalore', 'Rajasthan Royals',
-              'Kolkata Knight Riders', 'Kings XI Punjab', 'Sunrisers Hyderabad',
-              'Chennai Super Kings', 'Delhi Capitals']
+    topics = ['Indian Premier League',
+    'Mumbai Indians', 'Royal Challengers Bangalore', 
+    'Rajasthan Royals', 'Kolkata Knight Riders', 
+    'Kings XI Punjab', 'Sunrisers Hyderabad',
+    'Chennai Super Kings', 'Delhi Capitals',
+    '2020 Indian Premier League', '2019 Indian Premier League',
+    '2018 Indian Premier League', '2017 Indian Premier League',
+    '2016 Indian Premier League', '2015 Indian Premier League',
+    '2014 Indian Premier League', '2013 Indian Premier League',
+    '2012 Indian Premier League', '2011 Indian Premier League',
+    '2010 Indian Premier League', '2009 Indian Premier League',
+    '2008 Indian Premier League'
+    ]
     filename = 'ipl.txt'
 
     articles = get_all_wiki_page_content(topics)

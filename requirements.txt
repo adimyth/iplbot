@@ -1,9 +1,6 @@
-Flask>=0.11
-SQLAlchemy>=1.1.11
 wikipedia
 scikit-learn
 pandas
 nltk
-gunicorn
 beautifulsoup4
-fake-useragent
+streamlit==0.64.0

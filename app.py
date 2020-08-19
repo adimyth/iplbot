@@ -1,22 +1,25 @@
-from flask import Flask, render_template, request
+import streamlit as st
 from bot import generate_response
-from scraper import get_points_table
-import json
 
-app = Flask(__name__)
+# title
+st.title("BotVic")
+st.header("Retrieval Based Chatbot")
+st.markdown(
+    """
+    This is a simple retrieval based chatbot. It utilizes *TF-IDF Vectorizer* to find & return sentence most similar to user prompt. Based on the wonderful blog - [Building a Simple Chatbot from Scratch in Python (using NLTK)](https://medium.com/analytics-vidhya/building-a-simple-chatbot-in-python-using-nltk-7c8c8215ac6e) by Parul Pandey
+    """
+)
 
+# get input text
+input_text = st.text_input(label="English text.")
 
-@app.route("/")
-def home():
-    points_table = get_points_table()
-    return render_template("index.html", points_table=points_table)
+# return response
+if st.button("Submit"):
+    with st.spinner("Thinking ..."):
+        response = generate_response(input_text)
+        st.subheader("Predicted Spanish Translation")
+        st.success(f"{response}")
 
-
-@app.route("/get", methods=['GET', 'POST'])
-def get_bot_response():
-    user_input = request.args.get('msg')
-    return str(generate_response(user_input))
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+st.markdown(
+    "The interactive app is created using [Streamlit](https://streamlit.io/), an open-source framework that lets users creating apps for machine learning projects very easily."
+)
