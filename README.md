@@ -1,7 +1,7 @@
 # IPL BOT
 
 A retreival based question & answering bot trained on IPL wikipedia pages. Built using [Streamlit](https://www.streamlit.io/) and deployed using [Heroku](https://www.heroku.com/) - https://ipl-qa-bot.herokuapp.com/.
-Please, check the app on a desktop.
+
 ![Demo](out.gif)
 
 ## Libraries Used
