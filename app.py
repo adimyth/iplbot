@@ -1,5 +1,5 @@
-import streamlit as st
-from bot import generate_response
+import streamlit as st # type: ignore
+from bot import generate_response # type: ignore
 
 # title
 st.title("BotVic")

@@ -1,13 +1,13 @@
-import wikipedia
-import pandas as pd
+import wikipedia # type: ignore
+import pandas as pd # type: ignore
+from typing import List
 
 
-def get_wikipedia_page_content(topic):
+def get_wikipedia_page_content(topic: str) -> str:
     all_text = ''
     try:
         article = wikipedia.page(topic)
         all_text += get_wikipedia_page_text(article)
-        # all_text += get_wikipedia_page_tables(article)
     except Exception as e:
         print(f"Wikipedia page for {topic}: ", e)
     return all_text
@@ -17,16 +17,7 @@ def get_wikipedia_page_text(article):
     return article.content
 
 
-def get_wikipedia_page_tables(article):
-    text = ''
-    html = article.html().encode("UTF-8")
-    tables = pd.read_html(html)
-    for i in tables:
-        text += i.to_string()
-    return text
-
-
-def get_all_wiki_page_content(topics):
+def get_all_wiki_page_content(topics: List[str]) -> List[str]:
     articles = []
     for topic in topics:
         articles.append(get_wikipedia_page_content(topic))

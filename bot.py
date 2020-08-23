@@ -1,8 +1,10 @@
-import nltk
+import nltk # type: ignore
 import string
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer # type: ignore
+from sklearn.metrics.pairwise import cosine_similarity # type: ignore
+from typing import List
 nltk.data.path.append("./nltk_data/")
+
 
 with open('ipl.txt', 'r') as file:
     raw_data = file.read()
@@ -10,23 +12,23 @@ with open('ipl.txt', 'r') as file:
     sentence_tokens = nltk.sent_tokenize(raw_data)
 
 
-def get_word_tokens(text_string):
+def get_word_tokens(text_string: str) -> List[str]:
     text_string = text_string.lower()
     text_string = remove_punctuation_marks(text_string)
     word_tokens = nltk.word_tokenize(text_string)
     return lemmatization(word_tokens)
 
 
-def remove_punctuation_marks(text_string):
+def remove_punctuation_marks(text_string: str) -> str:
     return text_string.translate(str.maketrans('', '', string.punctuation))
 
 
-def lemmatization(tokens):
+def lemmatization(tokens: List[str]) -> List[str]:
     lemmatizer = nltk.stem.WordNetLemmatizer()
     return [lemmatizer.lemmatize(token) for token in tokens]
 
 
-def generate_response(user_input):
+def generate_response(user_input: str) -> str:
     updated_sentence_tokens = sentence_tokens.copy()
     updated_sentence_tokens.append(user_input)
     tfidf = TfidfVectorizer(tokenizer=get_word_tokens, stop_words='english')
