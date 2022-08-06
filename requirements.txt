@@ -3,4 +3,4 @@ scikit-learn
 pandas
 nltk
 beautifulsoup4
-streamlit==0.64.0
+streamlit==1.11.1
